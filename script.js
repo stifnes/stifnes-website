@@ -1,29 +1,43 @@
 // Mobile Menu Toggle Function
 
+// Get the hamburger menu elements
 let hamburgerMenu = document.getElementById("hamburgerMenu");
 let mobileNavList = document.getElementById("mobileNavList");
+
+// Toggle classes on the click event of Hamburger menu icon
 hamburgerMenu.addEventListener("click", () => {
   mobileNavList.classList.toggle("active");
   hamburgerMenu.classList.toggle("active");
 });
 
+//  ------------------------------------------- //
+
 //SVG Animation Scripts
 
+// Get the SVG Elements
 let path = document.querySelector(".line-svg");
-let pathLength = path.getTotalLength();
 
-path.style.strokeDasharray = pathLength + " " + pathLength;
-path.style.strokeDashoffset = pathLength;
+// Only Run the animation script if there is an SVG Line element on the page
+if (path) {
+  // Get length of the line
+  let pathLength = path.getTotalLength();
 
-window.addEventListener("scroll", () => {
-  var scrollPercentage =
-    (document.documentElement.scrollTop + document.body.scrollTop) /
-    (document.documentElement.scrollHeight -
-      document.documentElement.clientHeight);
-  var drawLength = pathLength * scrollPercentage;
-  path.style.strokeDashoffset = pathLength + drawLength;
-});
+  // Stroke Dash Array and offset are used to control the length of the line
+  path.style.strokeDasharray = pathLength + " " + pathLength;
+  path.style.strokeDashoffset = pathLength;
 
+  // Animation triggered on window scroll event handler
+  window.addEventListener("scroll", () => {
+    var scrollPercentage =
+      (document.documentElement.scrollTop + document.body.scrollTop) /
+      (document.documentElement.scrollHeight -
+        document.documentElement.clientHeight);
+    var drawLength = pathLength * scrollPercentage;
+    path.style.strokeDashoffset = pathLength + drawLength;
+  });
+}
+
+//  ------------------------------------------- //
 
 // Contact Form Javascript
 
