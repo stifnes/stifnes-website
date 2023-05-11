@@ -545,7 +545,7 @@ span[id$="display"] {
     order: 1;
   }
   #footer {
-    bottom: -90vh;
+    bottom: -100vh;
   }
   .education #footer {
     bottom: -60vh;
