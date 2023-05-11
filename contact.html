@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stifnes Samuel</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
     <header>
-      <div class="logo">Stifnes<br />Samuel</div>
+      <div class="logo">
+        <a href="./index.html">Stifnes<br />Samuel</a>
+      </div>
       <nav>
         <ul>
           <li><a href="./index.html">My Journey</a></li>
@@ -17,11 +19,19 @@
           <li><a href="./work.html">Work</a></li>
         </ul>
       </nav>
-      <button class="contact outline"> <a href="./contact.html">contact</a></button>
-      <div class="mobile-menu">
-        <div class="contact-icon-btn">
+      <button
+        class="contact outline"
+        onclick="window.location.href='./contact.html'"
+      >
+        contact
+      </button>
+      <nav class="mobile-menu">
+        <button
+          class="contact-icon-btn"
+          onclick="window.location.href='./contact.html'"
+        >
           <img src="./images/phone-icon.svg" alt="" />
-        </div>
+        </button>
         <div>
           <div class="hamburger" id="hamburgerMenu"></div>
           <ul id="mobileNavList">
@@ -30,7 +40,7 @@
             <li><a href="./work.html">Work</a></li>
           </ul>
         </div>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -40,61 +50,72 @@
           <div class="grid-item">
             <h6>We'd love to hear from you</h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua consectetur adipisicing.
+              Hello and welcome to my contact page! I'm thrilled that you're interested in getting in touch with me. Whether you have a question, a comment, or just want to say hello, I'd love to hear from you.
             </p>
             <ul>
               <li>
-                <img src="./images/location-icon.svg" alt="" class="contact-icon">
+                <img
+                  src="./images/location-icon.svg"
+                  alt=""
+                  class="contact-icon"
+                />
                 110 Abbey drive, riverston Abbey, NAVAN Rd, Dublin d07k076
               </li>
               <li>
-                <img src="./images/phone-icon-dark.svg" alt="" class="contact-icon">
-                +353-872105324
+                <img
+                  src="./images/phone-icon-dark.svg"
+                  alt=""
+                  class="contact-icon"
+                />
+                <a href="tel:+353-872105324">+353-872105324</a>
               </li>
               <li>
-                <img src="./images/Mail_inverse.svg" alt="" class="contact-icon">
-                samuelstifnes@gmail.com
+                <img
+                  src="./images/Mail_inverse.svg"
+                  alt=""
+                  class="contact-icon"
+                />
+                <a href="mailto:samuelstifnes@gmail.com">samuelstifnes@gmail.com</a>
               </li>
             </ul>
           </div>
           <div class="grid-item">
             <form action="" id="contact-form">
-              <input type="text" name="name" placeholder="Enter your name" id="username" onkeyup="submitForm()">
-              <input type="email" name="email" placeholder="Enter your email">
-              <textarea type="text" cols="10" rows="10" name="message" placeholder="Enter your message"></textarea>
-              <button type="submit" class="fill" onclick="submitForm()">Submit</button>
+              <input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                id="username"
+              />
+              <input type="email" name="email" id="useremail" placeholder="Enter your email" />
+              <textarea
+                type="text"
+                cols="10"
+                rows="10"
+                name="message"
+                id="usermessage"
+                placeholder="Enter your message"
+              ></textarea>
+              <button type="submit" class="fill" onclick="submitForm()">
+                Submit
+              </button>
             </form>
           </div>
         </div>
       </section>
 
-      <div class="success-modal">
+      <div id="success-modal">
         <p>
-          Thankyou! 
-          <span is="user-name">[username]</span>
-          We have received your message. We will get back to your at <span id="user-email">[user-email]</span>
+          Thankyou!
+          <span id="name-display">[username]</span>
+          We have received your message. We will get back to your at
+          <span id="email-display">[user-email]</span>
         </p>
       </div>
-      <div class="overlay"></div>
-     
-      <footer id="footer">
-        @Copyright - Stifnes Samuel
-      </footer>
-    </main>
-    <script>
-      let hamburgerMenu = document.getElementById("hamburgerMenu");
-      let mobileNavList = document.getElementById("mobileNavList");
-      hamburgerMenu.addEventListener("click", () => {
-        console.log('clicked')
-        mobileNavList.classList.toggle("active");
-      });
+      <div id="overlay" onclick="closeModal()"></div>
 
-      let username = document.getElementById('username').value
-      // let useremail = document.querySelector('input[name=email]').value
-      // let usermessage = document.querySelector('textarea[name=message]').value
-      function submitForm() {
-        console.log(username)
-      }
-    </script>
+      <footer id="footer">@Copyright - Stifnes Samuel</footer>
+    </main>
+    <script src="./script.js"></script>
   </body>
 </html>

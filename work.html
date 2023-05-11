@@ -19,13 +19,19 @@
           <li><a href="./work.html" class="active">Work</a></li>
         </ul>
       </nav>
-      <button class="contact outline">
-        <a href="./contact.html">contact</a>
+      <button
+        class="contact outline"
+        onclick="window.location.href='./contact.html'"
+      >
+        contact
       </button>
       <nav class="mobile-menu">
-        <div class="contact-icon-btn">
+        <button
+          class="contact-icon-btn"
+          onclick="window.location.href='./contact.html'"
+        >
           <img src="./images/phone-icon.svg" alt="" />
-        </div>
+        </button>
         <div>
           <div class="hamburger" id="hamburgerMenu"></div>
           <ul id="mobileNavList">
@@ -93,7 +99,11 @@
       <section id="work">
         <div class="grid-2">
           <div class="grid-item">
-            <img src="./images/MinarePakistan.png" alt="" style="width:70%!important" />
+            <img
+              src="./images/MinarePakistan.png"
+              alt=""
+              style="width: 70% !important"
+            />
           </div>
           <div class="grid-item">
             <h6>Worked For 5 years as Front End Engineer in Lahore</h6>
@@ -110,27 +120,6 @@
       </section>
       <footer id="footer">@Copyright - Stifnes Samuel</footer>
     </main>
-    <script>
-      let hamburgerMenu = document.getElementById("hamburgerMenu");
-      let mobileNavList = document.getElementById("mobileNavList");
-      hamburgerMenu.addEventListener("click", () => {
-        console.log("clicked");
-        mobileNavList.classList.toggle("active");
-        hamburgerMenu.classList.toggle("active")
-      });
-
-      let path = document.querySelector('.line-svg')
-      let pathLength = path.getTotalLength()
-
-
-      path.style.strokeDasharray = pathLength + ' ' + pathLength
-      path.style.strokeDashoffset = pathLength
-
-      window.addEventListener('scroll', () => {
-        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-        var drawLength = pathLength * scrollPercentage;
-        path.style.strokeDashoffset = pathLength + drawLength 
-      })
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>

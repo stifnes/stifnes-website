@@ -17,13 +17,11 @@
           <li><a href="./work.html">Work</a></li>
         </ul>
       </nav>
-      <button class="contact outline">
-        <a href="./contact.html">contact</a>
-      </button>
+      <button class="contact outline" onclick="window.location.href='./contact.html'">contact</button>
       <nav class="mobile-menu">
-        <div class="contact-icon-btn">
+        <button class="contact-icon-btn" onclick="window.location.href='./contact.html'">
           <img src="./images/phone-icon.svg" alt="" />
-        </div>
+        </button>
         <div>
           <div class="hamburger" id="hamburgerMenu"></div>
           <ul id="mobileNavList">
@@ -41,12 +39,8 @@
           <h1>My Journey</h1>
           <h4>This is my journey of becoming a frontend engineer</h4>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel
-            repudiandae rem hic? Atque quis consectetur vitae rerum vero omnis,
-            dolores assumenda dolorum dolor quos earum, unde corrupti corporis
-            repellendus? Deleniti sit repudiandae iste, facilis quo animi facere
-            officia ex, dignissimos earum aspernatur impedit quas aliquam
-            accusantium quasi perferendis est voluptates?
+            This website is a visual representation of how I transitioned from a mechanical engineer to a front end engineer working in the software industry.
+            Here you will find the places I studied and also the companies that I worked with over the last 5 years. 
           </p>
         </div>
       </section>
@@ -105,8 +99,7 @@
                 <div class="step-count">1</div>
                 <div>
                   <h6>Where it started</h6>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                  <p>I started my engineering education at GIK Institute of Engineering sciences & Technology
                   </p>
                 </div>
               </li>
@@ -115,7 +108,7 @@
                 <div>
                   <h6>How I learned Front End Engineer</h6>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    After 1 year, I started to learn basic web developement as a hobby.
                   </p>
                 </div>
               </li>
@@ -124,7 +117,7 @@
                 <div>
                   <h6>Studying at TU Dublin</h6>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    Currently, I am pursuing my masters in Computer Science at TU Dublin
                   </p>
                 </div>
               </li>
@@ -178,27 +171,6 @@
       </section>
       <footer id="footer">@Copyright - Stifnes Samuel</footer>
     </main>
-    <script>
-      let hamburgerMenu = document.getElementById("hamburgerMenu");
-      let mobileNavList = document.getElementById("mobileNavList");
-      hamburgerMenu.addEventListener("click", () => {
-        console.log("clicked");
-        mobileNavList.classList.toggle("active");
-        hamburgerMenu.classList.toggle("active")
-      });
-
-      let path = document.querySelector('.line-svg')
-      let pathLength = path.getTotalLength()
-
-
-      path.style.strokeDasharray = pathLength + ' ' + pathLength
-      path.style.strokeDashoffset = pathLength
-
-      window.addEventListener('scroll', () => {
-        var scrollPercentage = (document.documentElement.scrollTop + document.body.scrollTop) / (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-        var drawLength = pathLength * scrollPercentage;
-        path.style.strokeDashoffset = pathLength + drawLength 
-      })
-    </script>
+    <script src="./script.js"></script>
   </body>
 </html>

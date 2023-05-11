@@ -230,6 +230,7 @@ button.fill:is(:hover, :focus) {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 .contact-icon-btn img {
   width: 20px;
@@ -370,6 +371,7 @@ section h2 {
   background-color: var(--primary-background-color);
   position: relative;
   color: var(--primary-subtle2-color);
+  aspect-ratio: 1;
 }
 
 .steps li:not(:last-child) .step-count:after {
@@ -385,6 +387,7 @@ section h2 {
 .steps li p {
   display: none;
 }
+
 
 /* Education Page styles */
 
@@ -434,7 +437,7 @@ textarea::placeholder {
   color: var(--primary-subtle2-color);
 }
 
-.success-modal {
+#success-modal {
   position: fixed;
   left: 50%;
   top: 50%;
@@ -446,13 +449,13 @@ textarea::placeholder {
   z-index: 2;
   display: none;
 }
-.success-modal p{
+#success-modal p{
   color: var(--primary-subtle1-color);
   font-weight: 500;
   font-size: 18px;
 }
 
-.overlay {
+#overlay {
   display: none;
   position: fixed;
   width: 100%;
@@ -461,6 +464,11 @@ textarea::placeholder {
   top: 0;
   background-color: rgba(0, 0, 0, 0.7);
   z-index: 1;
+}
+
+span[id$="display"] {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 /* Desktop Styles */
@@ -542,5 +550,14 @@ textarea::placeholder {
 @media (width >= 768px) {
   .steps li p {
     display: inherit;
+  }
+}
+
+@media (768px < width < 1390px) {
+  .steps li {
+    padding-bottom: 1rem;
+  }
+  h6 {
+    font-size: 20px;
   }
 }
